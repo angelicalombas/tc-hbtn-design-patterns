@@ -16,9 +16,7 @@ public abstract class Personagem {
         this.destreza = destreza;
     }
 
-    public double getDanoAtaque(){
-        return forca;
-    }
+    public abstract double getDanoAtaque();
 
     public String getNome() {
         return nome;
@@ -78,28 +76,15 @@ public abstract class Personagem {
 
     @Override
     public String toString() {
-      //  return String.format("Personagem { nome = %s, tipo = %s, inteligencia = %d, forca = %d, vigor = %d, resistencia = %d, destreza = %d dano ataque = %2.f }", getNome(), getTipo(), getInteligencia(), getForca(), getVigor(), getResistencia(), getDestreza(), getDanoAtaque());
-            return   "Personagem { " +
-                    "nome = " + nome +
-                    ", tipo = " + tipo +
-                    ", inteligencia = " + inteligencia +
-                    ", forca = " + forca +
-                    ", vigor = " + vigor +
-                    ", resistencia = " + resistencia +
-                    ", destreza = " + destreza +
-                    ", dano ataque = " + String.format("%.2f", getDanoAtaque())+
-                    " }";
-
-
-      /*  return "Personagem{" +
-                "nome='" + nome + '\'' +
-                ", tipo=" + tipo +
-                ", inteligencia=" + inteligencia +
-                ", forca=" + forca +
-                ", vigor=" + vigor +
-                ", resistencia=" + resistencia +
-                ", destreza=" + destreza +
-                ", dano taque = " + getDanoAtaque() +
-                '}';*/
+        return "Personagem { " +
+                "nome = " + nome +
+                ", tipo = " + tipo +
+                ", inteligencia = " + inteligencia +
+                ", forca = " + forca +
+                ", vigor = " + vigor +
+                ", resistencia = " + resistencia +
+                ", destreza = " + destreza +
+                ", dano ataque = " + String.format("%.2f", getDanoAtaque()) +
+                " }";
     }
 }
