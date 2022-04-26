@@ -112,7 +112,15 @@ public class Impressao {
 
     @Override
     public String toString() {
-        return String.format("total de paginas: %d, total coloridas: %d, total preto e branco: %d, <frente e verso|frente>, total: R$ %.2f", getPaginasTotais(), getPaginasColoridas(), getPaginasTotais() - getPaginasColoridas(),calcularTotal());
+
+        String frenteVerso;
+        if (ehFrenteVerso == true){
+            frenteVerso = "frente e verso";
+        }else {
+            frenteVerso = "frente apenas";
+        }
+
+        return String.format("total de paginas: %d, total coloridas: %d, total preto e branco: %d, %s. total: R$ %.2f", getPaginasTotais(), getPaginasColoridas(), getPaginasTotais() - getPaginasColoridas(),frenteVerso,calcularTotal());
     }
 
 }
